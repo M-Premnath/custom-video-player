@@ -96,7 +96,6 @@ const App = () => {
           '&:hover': {
             color: '#B4EBE6',
             textDecoration: "underline",
-            transition: "color 0.3s ease",
             transform: "scale(1.05)",
             transition: "transform 0.3s ease",
           }
