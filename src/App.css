@@ -1,0 +1,139 @@
+/* ...existing code... */
+
+.app-container {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  gap: 2rem;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.left-container {
+  flex: 0 0 30%;
+  max-width: 400px;
+}
+
+.right-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.empty-player {
+  width: 100%;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background: #2f2f2f;
+  border-radius: 10px;
+  color: #B4EBE6;
+}
+
+/* Update existing video-container styles */
+.video-container {
+  width: 100%;
+  background: #333;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  max-height: 85vh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Update body styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+.video-form{
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 1rem;
+  max-width: 400px;
+  padding: 1rem;
+  text-align: center;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease-in-out;
+}
+.video-form .MuiAlert-root {
+  width: 100%;
+}
+.video-form  button:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+@media screen and (max-width: 768px) {
+  .app-container {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .left-container {
+    flex: 1;
+    max-width: none;
+  }
+  .left-container h1 {
+    font-size: 1.5rem;
+  }
+  .video-form{
+    max-width: 100%;
+  }
+  .video-form .form-title {
+    font-size: 1.2rem;
+  }
+  .video-form input[type="text"],
+  .video-form input[type="url"] {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+
+  }
+
+
+  .right-container {
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .video-container {
+    width: 100%;
+    max-height: none;
+    padding: 10px;
+  }
+  .empty-player {
+    width: 100%;
+    height: 300px;
+    font-size: 1rem;
+    text-align: center;
+    margin-top: -22px;
+  }
+  .empty-player h2 {
+    font-size: 1.2rem;
+  }
+  .empty-player p {
+    font-size: 0.9rem;
+  }
+  .empty-content {
+    font-size: 0.8rem;
+  }
+  .MuiDialogContentText-root li {
+    font-size: 0.9rem;
+  }
+  
+}
