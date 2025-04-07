@@ -1,26 +1,48 @@
-/* ...existing code... */
-
 .app-container {
-  display: flex;
-  width: 100%;
-  min-height: 100vh;
-  gap: 2rem;
-  padding: 2rem;
-  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 5px;
+  height: auto;
 }
 
+/* Left section */
 .left-container {
-  flex: 0 0 30%;
-  max-width: 400px;
-}
-
-.right-container {
-  flex: 1;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  align-items: flex-start;
+  margin: 20px;
+}
+.left-container h2 {
+  font-family: "'Cinzel', serif";
+  font-size: 1.7rem;
+  letter-spacing: "1px";
+  color:purple;
+  text-align: "center";
+  margin-bottom: "16px";
+  text-shadow: "1px 1px 3px rgba(0,0,0,0.5)";
 }
 
+/* Right section */
+.right-container {
+  grid-column: span 2;
+  grid-row-start: 1;
+  padding: 20px;
+  margin: 1rem;
+}
+
+/* Footer section */
+.footer-container {
+  grid-column: span 3;
+  grid-row-start: 2;
+  background: #F7F7F7;
+  border-radius: 10px 10px 0px 0px;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Empty video placeholder */
 .empty-player {
   width: 100%;
   height: 500px;
@@ -33,7 +55,7 @@
   color: #B4EBE6;
 }
 
-/* Update existing video-container styles */
+/* Video container */
 .video-container {
   width: 100%;
   background: #333;
@@ -48,19 +70,13 @@
   transition: all 0.3s ease-in-out;
 }
 
-/* Update body styles */
-body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
-}
-.video-form{
+/* Form */
+.video-form {
   display: flex;
   flex-direction: column;
   gap: 16px;
   margin-bottom: 1rem;
-  max-width: 400px;
+  width: 80%;
   padding: 1rem;
   text-align: center;
   background: #fff;
@@ -68,72 +84,100 @@ body {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease-in-out;
 }
+
 .video-form .MuiAlert-root {
   width: 100%;
 }
-.video-form  button:hover {
+
+.video-form button:hover {
   transform: scale(1.02);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
+/* Body reset */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
 
-@media screen and (max-width: 768px) {
+/* === Responsive === */
+@media screen and (max-width: 1024px) {
   .app-container {
-    flex-direction: column;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+  }
+
+  .right-container {
+    grid-column: span 1;
+    grid-row-start: auto;
+    margin: 0;
     padding: 1rem;
   }
 
+  .footer-container {
+    grid-column: span 1;
+    grid-row-start: auto;
+    margin-top: 1rem;
+  }
+
   .left-container {
-    flex: 1;
-    max-width: none;
+    padding: 1rem;
   }
-  .left-container h1 {
+  .left-container h2 {
     font-size: 1.5rem;
+    text-align: center;
   }
-  .video-form{
-    max-width: 100%;
-  }
-  .video-form .form-title {
-    font-size: 1.2rem;
-  }
-  .video-form input[type="text"],
-  .video-form input[type="url"] {
+  .video-form {
     width: 100%;
-    padding: 0.8rem 1rem;
-    font-size: 1rem;
-
-  }
-
-
-  .right-container {
-    flex: 1;
-    justify-content: center;
-    align-items: center;
   }
 
   .video-container {
-    width: 100%;
+    padding: 15px;
     max-height: none;
-    padding: 10px;
   }
+
   .empty-player {
-    width: 100%;
     height: 300px;
     font-size: 1rem;
     text-align: center;
-    margin-top: -22px;
   }
+
   .empty-player h2 {
     font-size: 1.2rem;
+    margin-top: -15px;
   }
-  .empty-player p {
-    font-size: 0.9rem;
+  .empty-player .MuiTypography-root {
+    font-size: 12px;
   }
-  .empty-content {
-    font-size: 0.8rem;
-  }
+
+  .empty-player p,
+  .empty-content,
   .MuiDialogContentText-root li {
     font-size: 0.9rem;
   }
-  
+}
+
+@media screen and (max-width: 600px) {
+  .left-container h1 {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  .video-form input[type="text"],
+  .video-form input[type="url"] {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+  }
+
+  .video-form .form-title {
+    font-size: 1.1rem;
+  }
+
+  .empty-player {
+    height: 250px;
+    font-size: 0.9rem;
+  }
 }

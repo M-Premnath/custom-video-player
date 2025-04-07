@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import VideoPlayer from "./VideoPlayer";
 import VideoForm from "./VideoForm";
+import Footer from "./Footer"; 
 import {
   Box,
   Skeleton,
@@ -33,21 +34,13 @@ const App = () => {
   return (
     <Box className="app-container">
       <Box className="left-container">
-        <h2 style={{
-          fontFamily: "'Cinzel', serif",
-          fontSize: "1.3rem",
-          letterSpacing: "1px",
-          color: "purple",
-          textAlign: "center",
-          marginBottom: "16px",
-          textShadow: "1px 1px 3px rgba(0,0,0,0.5)"
-        }}>
+        <h2>
           React-Powered Custom Player
         </h2>
         <VideoForm setVideoUrl={handleVideoSubmit} />
         <p style={{ marginTop: "1.5rem", fontSize: "14px", color: "#666", lineHeight: "1.8" }}>
 
-  <strong>Purpose:</strong> The goal of this project is to build a customizable and user-friendly video player that accepts various video URLs, allowing users to quickly preview or test videos without platform-specific dependencies. It was created to meet the need for a lightweight, adaptable video interface.
+  <strong>Purpose:</strong> The goal of this project is to build a customizable and user-friendly React video player that accepts various video URLs, allowing users to quickly preview and play videos without platform-specific dependencies. It was created to meet the need for a lightweight, adaptable video interface.
 </p>
 
       </Box>
@@ -129,6 +122,9 @@ const App = () => {
           </Button>
         </DialogActions>
       </Dialog>
+      <Box className="footer-container">
+        <Footer />
+      </Box>
     </Box>
   );
 };
