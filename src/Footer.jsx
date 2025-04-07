@@ -9,7 +9,7 @@ const Footer = () => {
     <Box sx={{ backgroundColor: '#f0f0f0', p: 4,  }}>
       <Grid container spacing={4} justifyContent="space-around" alignItems="center">
         <Grid item xs={12} sm={4} textAlign="center">
-          <img src="src/assets/images/react.svg" alt="Logo" style={{ width: '200px' }} />
+          <img src="/react.svg" alt="Logo" style={{ width: '200px' }} />
         </Grid>
 
         <Grid item xs={12} sm={4} textAlign="center">
